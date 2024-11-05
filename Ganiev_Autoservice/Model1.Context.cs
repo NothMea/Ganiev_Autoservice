@@ -16,15 +16,12 @@ namespace Ganiev_Autoservice
     public partial class Ganiev_autoserviceEntities : DbContext
     {
         private static Ganiev_autoserviceEntities _context;
-
         public static Ganiev_autoserviceEntities GetContext()
         {
             if (_context == null)
                 _context = new Ganiev_autoserviceEntities();
-
             return _context;
         }
-
         public Ganiev_autoserviceEntities()
             : base("name=Ganiev_autoserviceEntities")
         {
@@ -45,6 +42,7 @@ namespace Ganiev_Autoservice
         public virtual DbSet<ProductSale> ProductSale { get; set; }
         public virtual DbSet<Service> Service { get; set; }
         public virtual DbSet<ServicePhoto> ServicePhoto { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Tag> Tag { get; set; }
     }
 }

@@ -44,17 +44,45 @@ namespace Ganiev_Autoservice
             if (_currentService.Cost <= 0)
                 errors.AppendLine("Правильно укажите стоимость услуги");
 
-            if (_currentService.Discount < 0 || _currentService.Discount == null)
+            if (_currentService.DiscountInt < 0 || _currentService.Discount == null)
                 errors.AppendLine("Укажите скидку правильно");
 
-            if (string.IsNullOrWhiteSpace(_currentService.DurationInSeconds))
-                errors.AppendLine("Укажите длительность услуги");
+            if (_currentService.DurationInSeconds == 0)
+                errors.AppendLine("Укажите длительность");
+
+            if (_currentService.DurationInSeconds > 240 || _currentService.DurationInSeconds < 0)
+                errors.AppendLine("Длительность не может быть больше 240 минут");
 
             if (errors.Length > 0)
             {
                 MessageBox.Show(errors.ToString());
                 return;
             }
+
+            var allServices = Ganiev_autoserviceEntities.GetContext().Service.ToList();
+            allServices = allServices.Where(p => p.Title == _currentService.Title).ToList();
+            if (allServices.Count == 0)
+            {
+                if (_currentService.ID == 0)
+                {
+                    Ganiev_autoserviceEntities.GetContext().Service.Add(_currentService);
+                }
+                try
+                {
+                    Ganiev_autoserviceEntities.GetContext().SaveChanges();
+                    MessageBox.Show("Информация сохранена");
+                    Manager.MainFrame.GoBack();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString());
+                }
+            }
+            else
+            {
+                MessageBox.Show("Уже существует такая услуга");
+            }
+
             if (_currentService.ID == 0)
                 Ganiev_autoserviceEntities.GetContext().Service.Add(_currentService);
 

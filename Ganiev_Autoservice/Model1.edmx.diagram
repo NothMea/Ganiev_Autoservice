@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="4769165119ea4586963ae833ef831961" Name="Diagram1">
+      <Diagram DiagramId="d878f4a1ae6a4529b28430aa67e1c71e" Name="Diagram1">
         <EntityTypeShape EntityType="Ganiev_autoserviceModel.Client" Width="1.5" PointX="8" PointY="7.375" IsExpanded="true" />
         <EntityTypeShape EntityType="Ganiev_autoserviceModel.ClientService" Width="1.5" PointX="3" PointY="8.375" IsExpanded="true" />
         <EntityTypeShape EntityType="Ganiev_autoserviceModel.DocumentByService" Width="1.5" PointX="5.25" PointY="10.75" IsExpanded="true" />
@@ -15,6 +15,7 @@
         <EntityTypeShape EntityType="Ganiev_autoserviceModel.ProductSale" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Ganiev_autoserviceModel.Service" Width="1.5" PointX="0.75" PointY="8.25" IsExpanded="true" />
         <EntityTypeShape EntityType="Ganiev_autoserviceModel.ServicePhoto" Width="1.5" PointX="3" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Ganiev_autoserviceModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="2.125" IsExpanded="true" />
         <EntityTypeShape EntityType="Ganiev_autoserviceModel.Tag" Width="1.5" PointX="10.25" PointY="8.125" IsExpanded="true" />
         <AssociationConnector Association="Ganiev_autoserviceModel.FK_Client_Gender" ManuallyRouted="false" />
         <AssociationConnector Association="Ganiev_autoserviceModel.FK_ClientService_Service" ManuallyRouted="false" />
